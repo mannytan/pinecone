@@ -69,7 +69,7 @@ PINECONE.Main = function(name) {
 
 		PINECONE.Params = {
 			currentFoldAmount: 0.0001,
-			range: 0.25,
+			range: 0.5,
 			speed: 0.002,
 			orbitSpeed: 0.0001,
 			foldDampened: .5,
@@ -84,7 +84,7 @@ PINECONE.Main = function(name) {
 
 		this.guiContainer = this.gui.domElement;
 		PINECONE.Sliders.currentFoldAmount = this.gui.add(PINECONE.Params, 'currentFoldAmount', -1.0, 1.0).step(0.0005);
-		this.gui.add(PINECONE.Params, 'range', -0.25, 0.25).step(0.0001).name('range');
+		this.gui.add(PINECONE.Params, 'range', -1.0, 1.0).step(0.0001).name('range');
 		this.gui.add(PINECONE.Params, 'speed', -0.1, 0.1).step(0.0001).name('speed');
 		this.gui.add(PINECONE.Params, 'foldDampened', 0.0, .99).step(0.0005).name('foldDampened');
 		this.gui.add(PINECONE.Params, 'elasticity', 0.0, .99).step(0.0005).name('elasticity');

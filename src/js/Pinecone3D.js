@@ -79,20 +79,9 @@ PINECONE.Pinecone3D = function(name) {
 		this.vectorLine = new THREE.Line(geometry, material);
 		this.base.add(this.vectorLine);
 
-/*
-		// BASE SPHERE
-		geometry =  new THREE.SphereGeometry( 200, this.sphereSegmentsWidth, this.sphereSegmentsHeight );
-		material = new THREE.MeshBasicMaterial({color:0x000000, opacity:0.125, wireframe:true});
-		this.sphere = new THREE.Mesh( geometry, material);
-		// this.base.add(this.sphere);
-
-		for(i=0;i<this.total;i++){
-			this.sphere.geometry.vertices[i].addSelf(new THREE.Vector3(Math.random()*10,Math.random()*10,Math.random()*10));
-		}
-*/
-		// BASE SPHERE
+		// BASE SPHERE / ISOHEDRON
 		geometry =  new THREE.IcosahedronGeometry( 200, 3 );
-		material = new THREE.MeshBasicMaterial({color:0x000000, opacity:0.125, wireframe:true});
+		material = new THREE.MeshBasicMaterial({color:0x000000, opacity:0.05, wireframe:true});
 		this.sphere = new THREE.Mesh( geometry, material);
 		this.base.add(this.sphere);
 
@@ -145,7 +134,7 @@ PINECONE.Pinecone3D = function(name) {
 				this.plotterPoints[i].position
 			);
 
-			material = new THREE.LineBasicMaterial({ color: 0x000000, lineWidth: 1, opacity:.125});
+			material = new THREE.LineBasicMaterial({ color: 0xFF0000, lineWidth: 1, opacity:.125});
 			line = new THREE.Line(geometry, material);
 			this.deltaLines.push(line);
 			this.base.add(line);
